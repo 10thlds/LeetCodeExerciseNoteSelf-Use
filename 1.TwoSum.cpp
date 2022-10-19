@@ -21,7 +21,7 @@ Output: [0,1]
 */
 
 
-// BAOLIPOJIE
+// DESTROY IT
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) 
