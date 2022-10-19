@@ -21,7 +21,8 @@ b). Two numbers only appear only once, find them.
 class SolutionA{
 public:
 	vector<int> nums {1,1,1,1,2,3,2,3,4,5,6,7,6,5,4,8,8};
-	int solutionA(){
+	int solutionA()
+	{
 		int eor = 0;
 		for (int i = 0; i<nums.size(), i++){
 			eor = eor ^ nums[i];  // exclusive OR
@@ -33,9 +34,11 @@ public:
 class SolutionB{
 public:
 	vector<int> nums {1,1,1,2,3,2,3,4,5,6,7,6,5,4,8,8};
-	void solutionB(){
+	void solutionB()
+	{
 		int eor = 0;
-		for (int curNum : nums){
+		for (int curNum : nums)
+		{
 			eor ^= curNum;  // exclusive OR
 		}
 		// Now, eor == A ^ B
@@ -50,8 +53,10 @@ public:
 		// eor & (~eor + 1) == 0000000100
 		
 		int onlyOne = 0;
-		for (int cur : nums){
-			if ((cur & rightOne) == 0){ // repeat eOR operation with numbers whose 8th bit is 1 or 0
+		for (int cur : nums)
+		{
+			if ((cur & rightOne) == 0)
+			{ // repeat eOR operation with numbers whose 8th bit is 1 or 0
 				onlyOne ^= cur;
 			}
 		}
