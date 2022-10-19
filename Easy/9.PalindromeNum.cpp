@@ -3,7 +3,7 @@ Given an integer x, return true if x is palindrome integer.
 
 An integer is a palindrome when it reads the same backward as forward.
 
-For example, 121 is a palindrome while 123 or -121 are not.
+For example, 121 is a palindrome while 123 and -121 are not.
 */
 
 class Solution {
