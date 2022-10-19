@@ -8,9 +8,9 @@ For example, 121 is a palindrome while 123 and -121 are not.
 
 class Solution {
 public:
-    bool isPalindrome(int x) {
+	bool isPalindrome(int x) {
 		if (x<0 || (x % 10 == 0 && x!=0))
-        {						// Negetive numbers and one whose last digit is 0 are removed.
+		{						// Negetive numbers and one whose last digit is 0 are removed.
             return false;
         }
         int y = 0;
@@ -20,5 +20,5 @@ public:
             x /= 10;			// x = 5232		x = 523		x = 52		x = 5	...
         }
 		return x == y || x == y/10;	// Consider even and odd number...
-    }
+	}
 };
