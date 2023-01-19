@@ -34,28 +34,28 @@ class SolutionB{
 public:
 	std::vector<int> nums{1,1,4,2,3,2,3,4,5,6,7,6,5,8,8,9};
 	void solutionB(){
-		int eor = 0;
+		int aXORb = 0;
 		for (int curNum : nums){
-			eor ^= curNum;  // exclusive OR
+			aXORb ^= curNum;  // exclusive OR
 		}
-		// Now, eor == A ^ B
-		// A does not equal to B, so that there must be some bits which result to 1 in eor
-		// Suppose the 8th bit of eor is 1, bring a new variable eorR= 0, repeat eOR operation with numbers whose 8th bit is 1 or 0
-		// Then we find eorR == one of A and B; // Finally eor ^ eorR == A ^ B ^ A(or B) == A or B
+		// Now, aXORb == A ^ B
+		// A does not equal to B, so that there must be some bits which result to 1 in aXORb
+		// Suppose the 8th bit of aXORb is 1, bring a new variable eorR= 0, repeat XOR operation with numbers whose 8th bit is 1 or 0
+		// Then we find eorR == one of A and B; // Finally aXORb ^ eorR == A ^ B ^ A(or B) == A or B
 		
-		int rightOne = eor & (~eor + 1);
-		// eor 			== 1010111100
-		// ~eor 		== 0101000011
-		// ~eor + 1 		== 0101000100
-		// eor & (~eor + 1) 	== 0000000100
+		int rightOne = aXORb & (~aXORb + 1); //for example:
+		// aXORb 		== 1010111100
+		// ~aXORb 		== 0101000011
+		// ~aXORbr + 1 		== 0101000100
+		// aXORb & (~aXORb + 1)	== 0000000100
 		
-		int onlyOne = 0;
+		int firstOne = 0;
 		for (int cur : nums){
 			if ((cur & rightOne) == 0){ // repeat eOR operation with numbers whose 8th bit is 1 or 0
-				onlyOne ^= cur;
+				firstOne ^= cur;
 			}
 		}
-		int anotherOne = eor^onlyOne;
-		std::cout << onlyOne << " " << anotherOne << std::endl;
+		int anotherOne = aXORb^firstOne;
+		std::cout << firstOne << " " << anotherOne << std::endl;
 	}
 };
