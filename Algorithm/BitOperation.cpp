@@ -20,10 +20,10 @@ b). Two numbers only appear only once, find them.
 
 class SolutionA{
 public:
-	vector<int> nums {1,1,1,1,2,3,2,3,4,5,6,7,6,5,4,8,8};
+	std::vector<int> nums{1,1,1,1,2,3,2,3,4,5,6,7,6,5,4,8,8};
 	int solutionA(){
 		int eor = 0;
-		for (int i = 0; i<nums.size(), i++){
+		for (int i = 0; i<nums.size(); i++){
 			eor = eor ^ nums[i];  // exclusive OR
 		}
 		return eor;
@@ -32,7 +32,7 @@ public:
 
 class SolutionB{
 public:
-	vector<int> nums {1,1,1,2,3,2,3,4,5,6,7,6,5,4,8,8};
+	std::vector<int> nums{1,1,4,2,3,2,3,4,5,6,7,6,5,8,8,9};
 	void solutionB(){
 		int eor = 0;
 		for (int curNum : nums){
@@ -44,10 +44,10 @@ public:
 		// Then we find eorR == one of A and B; // Finally eor ^ eorR == A ^ B ^ A(or B) == A or B
 		
 		int rightOne = eor & (~eor + 1);
-		// eor == 1010111100
-		// ~eor == 0101000011
-		// ~eor + 1 == 0101000100
-		// eor & (~eor + 1) == 0000000100
+		// eor 			== 1010111100
+		// ~eor 		== 0101000011
+		// ~eor + 1 		== 0101000100
+		// eor & (~eor + 1) 	== 0000000100
 		
 		int onlyOne = 0;
 		for (int cur : nums){
