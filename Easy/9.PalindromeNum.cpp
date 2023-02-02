@@ -22,3 +22,11 @@ public:
 		return x == y || x == y/10;	// Consider even and odd number...
 	}
 };
+
+int main()
+{
+	Solution s1;
+	int x = 337845818;
+	if (s1.isPalindrome(x)) {std::cout<<"Is"<<std::endl;}
+	return 0;
+}
