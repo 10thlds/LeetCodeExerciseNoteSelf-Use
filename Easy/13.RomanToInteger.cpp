@@ -3,7 +3,7 @@
 
 class Solution {
 public:
-	intromanToInt(string s)
+	int romanToInt(std::string s)
     {
         std::unordered_map<char, int> rToI = {{'M', 1000}, {'D', 500}, {'C', 100}, {'L', 50}, {'X', 10}, {'V', 5}, {'I', 1}};
         int res = 0;
@@ -15,3 +15,10 @@ public:
 		return res;
     }
 };
+
+int main()
+{
+	Solution s1;
+	s1.romanToInt("MDCXII");
+	return 0;
+}
