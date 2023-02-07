@@ -17,8 +17,8 @@ public:
 		int y = 0;
 		while (x>y)				// Actually only consider half of the digits of the number
 		{						// x = 52325
-			y = y * 10 + x%10;	// y = 5		y = 52		y = 523		y = 5232...
-			x /= 10;			// x = 5232		x = 523		x = 52		x = 5	...
+			y = y * 10 + x%10;	// y = 5		y = 52		//y = 523		y = 5232...
+			x /= 10;			// x = 5232		x = 523		//x = 52		x = 5	...
 		}
 		return x == y || x == y/10;	// Consider even and odd number...
 	}
@@ -28,6 +28,6 @@ int main()
 {
 	Solution s1;
 	int x = 337845818;
-	if (s1.isPalindrome(x)) {std::cout<<"Is"<<std::endl;}
+	if (s1.isPalindrome(x)) {std::cout<<""<<std::endl;}
 	return 0;
 }
