@@ -13,7 +13,7 @@ public:
 
                 default:
                     if(stk.empty()||c!=stk.top()) return false;
-                    else stk.pop(); // close paren is removed, stack is empty
+                    else stk.pop(); // close paren is removed
             }
         }
         return stk.empty();
